@@ -86,9 +86,7 @@ function getDayName(date) {
 function getNextFriday(/* date */) {
   // const currentDayIndex = date.getDay();
   // const currentDayDate = date.getDate();
-
   // let differenceDays = 0;
-
   // if (currentDayIndex < 5) {
   //   differenceDays = 5 - currentDayIndex;
   // } else if (currentDayIndex > 5) {
@@ -96,7 +94,6 @@ function getNextFriday(/* date */) {
   // } else {
   //   differenceDays = 7;
   // }
-
   // const fridayDate = new Date(
   //   date.getFullYear(),
   //   date.getUTCMonth(),
@@ -105,7 +102,6 @@ function getNextFriday(/* date */) {
   //   date.getMinutes(),
   //   date.getSeconds()
   // );
-
   // return fridayDate;
 }
 
