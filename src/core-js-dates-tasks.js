@@ -217,9 +217,8 @@ function formatDate(date) {
  * 1, 2024 => 8
  */
 
-// оно мертвяк
 function getCountWeekendsInMonth(month, year) {
-  const daysCount = new Date(year, month).getDate();
+  const daysCount = new Date(year, month, 0).getDate();
   let countWeekends = 0;
   for (let day = 1; day <= daysCount; day += 1) {
     const currentDate = new Date(year, month - 1, day);
