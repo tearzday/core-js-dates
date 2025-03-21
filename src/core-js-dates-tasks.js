@@ -83,26 +83,30 @@ function getDayName(date) {
  * Date('2024-02-13T00:00:00Z') => Date('2024-02-16T00:00:00Z')
  * Date('2024-02-16T00:00:00Z') => Date('2024-02-23T00:00:00Z')
  */
-function getNextFriday(/* date */) {
-  // const currentDayIndex = date.getDay();
-  // const currentDayDate = date.getDate();
-  // let differenceDays = 0;
-  // if (currentDayIndex < 5) {
-  //   differenceDays = 5 - currentDayIndex;
-  // } else if (currentDayIndex > 5) {
-  //   differenceDays = currentDayIndex - 5 + 5;
-  // } else {
-  //   differenceDays = 7;
-  // }
-  // const fridayDate = new Date(
-  //   date.getFullYear(),
-  //   date.getUTCMonth(),
-  //   currentDayDate + differenceDays,
-  //   date.getHours(),
-  //   date.getMinutes(),
-  //   date.getSeconds()
-  // );
-  // return fridayDate;
+function getNextFriday(date) {
+  const currentDayIndex = date.getDay();
+  const currentDayDate = date.getDate();
+
+  let differenceDays = 0;
+
+  if (currentDayIndex < 5) {
+    differenceDays = 5 - currentDayIndex;
+  } else if (currentDayIndex > 5) {
+    differenceDays = currentDayIndex - 5 + 5;
+  } else {
+    differenceDays = 7;
+  }
+
+  const fridayDate = new Date(
+    date.getFullYear(),
+    date.getUTCMonth(),
+    currentDayDate + differenceDays,
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds()
+  );
+
+  return fridayDate;
 }
 
 /**
@@ -212,20 +216,17 @@ function formatDate(date) {
  * 12, 2023 => 10
  * 1, 2024 => 8
  */
-function getCountWeekendsInMonth(month, year) {
-  const daysCount = new Date(year, month).getUTCDate();
-  let countWeekends = 0;
-
-  for (let day = 1; day <= daysCount; day += 1) {
-    const currentDate = new Date(year, month - 1, day);
-    const dayNumber = currentDate.getDay();
-
-    if (dayNumber === 0 || dayNumber === 6) {
-      countWeekends += 1;
-    }
-  }
-
-  return countWeekends;
+function getCountWeekendsInMonth(/* month, year */) {
+  // const daysCount = new Date(year, month).getUTCDate();
+  // let countWeekends = 0;
+  // for (let day = 1; day <= daysCount; day += 1) {
+  //   const currentDate = new Date(year, month - 1, day);
+  //   const dayNumber = currentDate.getDay();
+  //   if (dayNumber === 0 || dayNumber === 6) {
+  //     countWeekends += 1;
+  //   }
+  // }
+  // return countWeekends;
 }
 
 /**
