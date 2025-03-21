@@ -216,17 +216,17 @@ function formatDate(date) {
  * 12, 2023 => 10
  * 1, 2024 => 8
  */
-function getCountWeekendsInMonth(/* month, year */) {
-  // const daysCount = new Date(year, month).getUTCDate();
-  // let countWeekends = 0;
-  // for (let day = 1; day <= daysCount; day += 1) {
-  //   const currentDate = new Date(year, month - 1, day);
-  //   const dayNumber = currentDate.getDay();
-  //   if (dayNumber === 0 || dayNumber === 6) {
-  //     countWeekends += 1;
-  //   }
-  // }
-  // return countWeekends;
+function getCountWeekendsInMonth(month, year) {
+  const daysCount = new Date(year, month).getUTCDate();
+  let countWeekends = 0;
+  for (let day = 1; day <= daysCount; day += 1) {
+    const currentDate = new Date(year, month - 1, day);
+    const dayNumber = currentDate.getDay();
+    if (dayNumber === 0 || dayNumber === 6) {
+      countWeekends += 1;
+    }
+  }
+  return countWeekends;
 }
 
 /**
