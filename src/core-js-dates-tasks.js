@@ -248,6 +248,11 @@ function getWeekNumberByDate(date) {
 
   let countWeek = 0;
 
+  if (currentDate.getDay() <= 4) {
+    countWeek += 1;
+    currentDate.setDate(6 - currentDate.getDate());
+  }
+
   while (currentDate <= date) {
     if (currentDate.getDay() === 1) {
       countWeek += 1;
@@ -258,7 +263,6 @@ function getWeekNumberByDate(date) {
 
   return countWeek;
 }
-
 /**
  * Returns the date of the next Friday the 13th from a given date.
  * Friday the 13th is considered an unlucky day in some cultures.
